@@ -1,0 +1,14 @@
+graphType=powerlaw_cluster_graph
+numberOfNodes=8
+numberOfEdges=15
+maxDegree=7
+maxNumberOfColors=8
+#
+0 3 4 6
+1 3 4 5
+2 3
+3 0 1 2 4 5 6 7
+4 0 1 3 5 6 7
+5 1 3 4
+6 0 3 4 7
+7 3 4 6

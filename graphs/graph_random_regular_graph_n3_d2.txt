@@ -1,0 +1,9 @@
+graphType=random_regular_graph
+numberOfNodes=3
+numberOfEdges=3
+maxDegree=2
+maxNumberOfColors=2
+#
+0 1 2
+1 0 2
+2 0 1
