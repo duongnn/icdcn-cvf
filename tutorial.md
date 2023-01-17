@@ -68,7 +68,7 @@ We add a new directory `newdijkstra` under the directory `src`
 
 ### 2.2. Add class `NodeStateNewDijkstra` to the package <span id="demo-nodestate"><span>
 
-We create a new file `NodeStateNewDijkstra.java` in the directory `src/newdijkstra/`.
+We create a new file `NodeStateNewDijkstra.java` in the directory `src/newdijkstra/`. The complete source code for `NodeStateNewDijkstra.java` is available [here](https://github.com/duongnn/icdcn-cvf/blob/0d668a5a97e980746814682feb2b6f718590d3fd/src/newdijkstra/NodeStateNewDijkstra.java)
 
 In Dijkstra program, state of a node is an integer in the set {0, 1, 2}.
 So the class `NodeStateNewDijkstra` has a field says `int nodeValue` for storing this integer.
@@ -180,12 +180,14 @@ Then abstract methods of `NodeStateTemplate`:
 
 ```
 
-The complete source code for `NodeStateNewDijkstra.java` is available [here](https://github.com/duongnn/icdcn-cvf/blob/0d668a5a97e980746814682feb2b6f718590d3fd/src/newdijkstra/NodeStateNewDijkstra.java)
 
 	
 	
 ### 2.3. Add class `ProgramConfigurationNewDijkstra` to package <span id="demo-program-config"><span>
 	
+We create a new file `ProgramConfigurationNewDijkstra.java` in the directory `src/newdijkstra/`.
+The complete source code of `ProgramConfigurationNewDijkstra.java` is available [here](https://github.com/duongnn/icdcn-cvf/blob/be2eeeb22640a856268641072a4854331dd7a639/src/newdijkstra/ProgramConfigurationNewDijkstra.java).
+
 For Dijkstra's program, we do not have any program-specific information to keep.
 All necessary information are already declared in the superclass ProgramConfigurationTemplate.
 So the we do not define new fields in ProgramConfigurationNewDijkstra, and its constructor simply calls the superclass' constructor.
@@ -582,7 +584,6 @@ Next we implement abstract methods for perturbing state of a node. These methods
 	
 ```
 
-The complete source code of `ProgramConfigurationNewDijkstra.java` is available [here](https://github.com/duongnn/icdcn-cvf/blob/be2eeeb22640a856268641072a4854331dd7a639/src/newdijkstra/ProgramConfigurationNewDijkstra.java).
 
 
 
