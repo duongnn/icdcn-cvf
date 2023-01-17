@@ -1,4 +1,4 @@
-In this tutorial, we will see how to add a program to the framework so that we can analyze the effect of cvf and program transitions.
+In this tutorial, we will see how to add a program to the framework so that we can analyze the effect of `cvfs` and program transitions.
 
 
 Tutorial outline:
@@ -184,7 +184,7 @@ The complete source code for `NodeStateNewDijkstra.java` is available [here](htt
 
 	
 	
-### 2.3. Add class ProgramConfigurationNewDijkstra to package <span id="demo-program-config"><span>
+### 2.3. Add class `ProgramConfigurationNewDijkstra` to package <span id="demo-program-config"><span>
 	
 For Dijkstra's program, we do not have any program-specific information to keep.
 All necessary information are already declared in the superclass ProgramConfigurationTemplate.
@@ -582,7 +582,7 @@ Next we implement abstract methods for perturbing state of a node. These methods
 	
 ```
 
-
+The complete source code of `ProgramConfigurationNewDijkstra.java` is available [here](https://github.com/duongnn/icdcn-cvf/blob/be2eeeb22640a856268641072a4854331dd7a639/src/newdijkstra/ProgramConfigurationNewDijkstra.java).
 
 
 
