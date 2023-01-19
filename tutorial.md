@@ -585,7 +585,12 @@ Next we implement abstract methods for perturbing state of a node. These methods
 ```
 
 
+VM options:
+-Xms1G -Xmx1G
 
+Program arguments:
+--analysis-mode=config-base --config-base-analysis-task=full --program-name=coloring --number-of-nodes=5 --output-filename-prefix=.\results\abc --debug-filename-prefix=.\results\debug\abc --cvf=constrained-perturb --sample-size=0 --probe-limit=0 --random-trans-nbr-prob=1 --random-cvf-nbr-prob=1 --graph-topology-filename=.\graphs\graph_random_regular_graph_n6_d3.txt --run-id=0
+		    
 
 
 
