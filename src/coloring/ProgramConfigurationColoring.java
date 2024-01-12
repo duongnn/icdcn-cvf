@@ -222,7 +222,13 @@ public class ProgramConfigurationColoring  extends ProgramConfigurationTemplate 
         NodeStateColoring nodeInfo = (NodeStateColoring) getNodeStateMap().get(nodeId);
         int nodeColor = nodeInfo.getNodeColor();
         Vector<Integer> nodeNbr = graphTopology.get(nodeId);
-        int nodeDegree = nodeNbr.size();
+
+        int nodeDegree;
+        if(cvf == CVF_AS_CONSTRAINED_PERTURBATION_AND_TOPOLOGY_RESTRICTION){
+            nodeDegree = nodeNbr.size();
+        }else{
+            nodeDegree = maxDegree;
+        }
 
         // unlike Dijkstra 3 states program where there is top, bottom, and other nodes,
         // in coloring, there is no difference between nodes.
