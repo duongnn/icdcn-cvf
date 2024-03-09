@@ -12,6 +12,7 @@ import static main.Utility.getBooleanFromInt;
 import static maxmatching.NodeStateMaxMatching.*;
 
 /**
+ * created on 11/15/20 by duongnn
  */
 
 public class ProgramConfigurationMaxMatching extends ProgramConfigurationTemplate {
@@ -128,7 +129,7 @@ public class ProgramConfigurationMaxMatching extends ProgramConfigurationTemplat
      * @return list of states obtained by arbitrarily perturbing a node
      *         Current configuration is excluded in the results.
      */
-    public NodePerturbationResults perturbANodeWithContraint(int nodeId){
+    public NodePerturbationResults perturbANodeWithConstraint(int nodeId){
         NodeStateMaxMatching nodeInfo = (NodeStateMaxMatching) getNodeStateMap().get(nodeId);
         int nodePvalue = nodeInfo.getPvalue();
         boolean nodeMvalue = nodeInfo.getMvalue();
@@ -194,8 +195,8 @@ public class ProgramConfigurationMaxMatching extends ProgramConfigurationTemplat
      * @return list of states obtained by arbitrarily perturbing a node
      *         Current configuration is excluded in the results.
      */
-    public NodePerturbationResults perturbANodeWithContraintAndTopologyRestriction(int nodeId){
-        return perturbANodeWithContraint(nodeId);
+    public NodePerturbationResults perturbANodeWithConstraintAndTopologyRestriction(int nodeId){
+        return perturbANodeWithConstraint(nodeId);
     }
 
     /**
@@ -305,7 +306,8 @@ public class ProgramConfigurationMaxMatching extends ProgramConfigurationTemplat
                     }else{
                         // check if could be a candidate for seduction
                         if((nbrInfo.getPvalue() == MAX_MATCHING_PVALUE_NULL) &&
-                                (nbr > nodeId) &&
+                                //(nbr > nodeId) &&  // this is old code.
+                                (nbr < nodeId) &&    // new code that is consistent with paper description
                                 (!nbrInfo.getMvalue())){
 
                             // update seduction candidate if it is smaller
@@ -337,7 +339,8 @@ public class ProgramConfigurationMaxMatching extends ProgramConfigurationTemplat
                 // check if partner is pointing back to you
                 NodeStateMaxMatching partnerInfo = (NodeStateMaxMatching) getNodeStateMap().get(nodePvalue);
                 if((partnerInfo.getPvalue() != nodeId) &&   // partner is not pointing back
-                        (partnerInfo.getMvalue() || (nodePvalue < nodeId))){
+                        //(partnerInfo.getMvalue() || (nodePvalue < nodeId))){  // old code
+                        (partnerInfo.getMvalue() || (nodePvalue > nodeId))){   // new code that is consistent with paper description
                     // action 4: abandonment
                     listOfSuccessors.add(
                             new SuccessorInfo(nodeId,
