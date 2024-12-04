@@ -1,4 +1,4 @@
-# icdcn-cvf
+# A tool for analyzing consistency violating faults (cvfs)
 This repo contains the source code and experiment data for ICDCN'23 paper (submission 685).
 
 We have developed this program as a generic toolset so that by only coding the specific algorithm, one can obtain the effect of cvf on that program. 
